@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">My Contacts</string>
+
+    <!-- Main screen -->
+    <string name="label_name">Name:</string>
+    <string name="label_phone">Phone:</string>
+    <string name="label_dob">Date of Birth:</string>
+    <string name="label_email">Email:</string>
+    <string name="label_avatar">Avatar:</string>
+    <string name="hint_name">Enter name</string>
+    <string name="hint_phone">Enter phone number</string>
+    <string name="hint_dob">Pick a date (optional)</string>
+    <string name="hint_email">Enter email (optional)</string>
+    <string name="btn_save">Save Details</string>
+    <string name="btn_update">Update Details</string>
+    <string name="btn_view">View Details</string>
+    <string name="tap_avatar_hint">Tap the avatar to change it</string>
+    <string name="avatar_desc">Selected avatar</string>
+
+    <!-- Avatar picker dialog -->
+    <string name="choose_avatar_title">Choose an avatar</string>
+    <string name="avatar_option_desc">Avatar option</string>
+
+    <!-- Validation and messages -->
+    <string name="error_name_required">Name is required</string>
+    <string name="error_phone_required">Phone number is required</string>
+    <string name="error_phone_invalid">Please enter a valid phone number</string>
+    <string name="error_email_invalid">Please enter a valid email address</string>
+    <string name="msg_saved">Contact has been created with id: %1$d</string>
+    <string name="msg_updated">Contact updated</string>
+
+    <!-- Details screen -->
+    <string name="item_label_name">Name</string>
+    <string name="item_label_phone">Phone</string>
+    <string name="item_label_dob">DoB</string>
+    <string name="item_label_email">Email</string>
+    <string name="btn_add_new">Add New Contact</string>
+    <string name="delete_icon_desc">Delete this contact</string>
+    <string name="delete_title">Delete contact</string>
+    <string name="delete_message">If you press Delete, the contact "%1$s" will be permanently removed. This cannot be undone.</string>
+    <string name="delete_yes">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="msg_deleted">Contact deleted</string>
+</resources>

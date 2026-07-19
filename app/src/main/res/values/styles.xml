@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- keep the classic layout below the status/action bar on Android 15+ -->
+        <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
+    </style>
+
+    <!-- Label on the left of each contact list row, e.g. "Name" -->
+    <style name="ItemLabel">
+        <item name="android:textColor">@color/itemLabel</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Value on the right of each contact list row, e.g. the actual name -->
+    <style name="ItemValue">
+        <item name="android:textColor">@color/itemValue</item>
+    </style>
+
+    <!-- Label on the data entry form, e.g. "Name:" -->
+    <style name="FormLabel">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+</resources>

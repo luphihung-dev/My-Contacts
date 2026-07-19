@@ -1,0 +1,19 @@
+# Gradle
+.gradle/
+build/
+app/build/
+
+# Local configuration (machine-specific, contains SDK path)
+local.properties
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Coursework document (submitted separately, not part of the app)
+COMP1786_Logbook_Exercise3.docx
+details
