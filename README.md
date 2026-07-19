@@ -72,7 +72,3 @@ Or simply open the project in Android Studio and press **Run ▶**.
 ## 🎓 About
 
 Developed as part of **COMP1786 – Mobile Application Design and Development** at the University of Greenwich, extending the Lecture 5 *Android Persistence* sample into a complete contact manager.
-
----
-
-Made with ☕ by [luphihung-dev](https://github.com/luphihung-dev)
