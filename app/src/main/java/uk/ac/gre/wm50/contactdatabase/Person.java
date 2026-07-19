@@ -5,7 +5,7 @@ public class Person {
     private String phone;
     private String birthDate;
     private String email;
-    // name of the drawable resource used as this person's avatar, e.g. "avatar_3"
+    //drawable name of the avatar, e.g. "avatar_3"
     private String avatar;
     private int id;
 

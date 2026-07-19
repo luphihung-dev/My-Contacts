@@ -46,8 +46,7 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        // reload the list every time we come back, so edits and
-        // newly added contacts show up immediately
+        //reload the list so edited/added contacts show up
         ArrayList<Person> details = db.getDetails();
         myPersonAdapter = new PersonAdapter(this, details);
         recyclerView.setAdapter(myPersonAdapter);

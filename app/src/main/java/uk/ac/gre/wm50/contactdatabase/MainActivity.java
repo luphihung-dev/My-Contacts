@@ -28,8 +28,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_EMAIL = "extra_email";
     public static final String EXTRA_AVATAR = "extra_avatar";
 
-    // all avatars live in res/drawable; we store the resource NAME in the
-    // database because resource ids can change between builds
+    // avatar drawables the user can pick from
     private static final String[] AVATAR_NAMES = {
             "avatar_1", "avatar_2", "avatar_3", "avatar_4",
             "avatar_5", "avatar_6", "avatar_7", "avatar_8"
@@ -37,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String selectedAvatar = AVATAR_NAMES[0];
     private ImageView imgAvatar;
-    // -1 means we are creating a new contact, otherwise the id being edited
+    // id of the contact being edited, -1 when creating a new one
     private int editingId = -1;
 
     @Override
@@ -65,11 +64,10 @@ public class MainActivity extends AppCompatActivity {
         imgAvatar = findViewById(R.id.imgAvatar);
         imgAvatar.setOnClickListener(v -> showAvatarPicker());
 
-        // pick the date of birth from a DatePickerDialog instead of free text
         EditText dobTxt = findViewById(R.id.dobText);
         dobTxt.setOnClickListener(v -> showDatePicker(dobTxt));
 
-        // when opened from the contact list, pre-fill the form to edit
+        // opened from the contact list -> pre-fill the form to edit
         Intent intent = getIntent();
         if (intent.hasExtra(EXTRA_ID)) {
             editingId = intent.getIntExtra(EXTRA_ID, -1);
@@ -141,8 +139,7 @@ public class MainActivity extends AppCompatActivity {
         String dob = dobTxt.getText().toString().trim();
         String email = emailTxt.getText().toString().trim();
 
-        // name and phone are required; date of birth and email are optional,
-        // but if an email is entered it must at least look like an email
+        // name and phone are required, the rest is optional
         if (name.isEmpty()) {
             nameTxt.setError(getString(R.string.error_name_required));
             nameTxt.requestFocus();
@@ -169,7 +166,6 @@ public class MainActivity extends AppCompatActivity {
         Person p = new Person(name, phone, dob, email, selectedAvatar);
 
         if (editingId >= 0) {
-            // editing an existing contact: update the row and go back to the list
             p.setId(editingId);
             dbHelper.updateDetails(p);
             Toast.makeText(this, R.string.msg_updated, Toast.LENGTH_LONG).show();
@@ -179,8 +175,11 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, getString(R.string.msg_saved, personId),
                     Toast.LENGTH_LONG).show();
 
+            // reuse the list screen if it is already open, don't stack a new one
             Intent intent = new Intent(this, DetailsActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
+            finish();
         }
     }
 }

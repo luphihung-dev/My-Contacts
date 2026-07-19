@@ -44,9 +44,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.PersonView
         holder.tvDoB.setText(person.getBirthDate());
         holder.tvEmail.setText(person.getEmail());
 
-        // the avatar is stored in the database as a drawable resource NAME
-        // (e.g. "avatar_3"), so look up its id at runtime; fall back to the
-        // first avatar for rows saved before avatars existed
+        // avatar is stored as a drawable name, look up its id at runtime
         String avatarName = person.getAvatar();
         int resId = 0;
         if (avatarName != null) {
@@ -69,7 +67,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.PersonView
 
         // delete via the bin icon, with a confirmation dialog
         holder.btnDelete.setOnClickListener(view ->
-                confirmDelete(holder.getAdapterPosition()));
+                confirmDelete(holder.getBindingAdapterPosition()));
     }
 
     private void confirmDelete(int position) {

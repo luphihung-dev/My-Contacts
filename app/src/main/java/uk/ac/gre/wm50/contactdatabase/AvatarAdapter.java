@@ -8,11 +8,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-/**
- * Adapter for the grid of selectable avatars shown in the "Choose an avatar" dialog.
- * Avatars are drawable resources; the adapter reports the chosen resource NAME
- * (e.g. "avatar_3") back through the listener so it can be stored in the database.
- */
+//adapter for the avatar grid inside the "Choose an avatar" dialog
 public class AvatarAdapter extends RecyclerView.Adapter<AvatarAdapter.AvatarViewHolder> {
 
     public interface OnAvatarClickListener {
